@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lattes Redirector</title>
+
+    <meta charset="UTF-8">
+    <meta name="author"      content="Thayuno">
+    <meta name="description" content="Lattes Forwarding website.">
+    <meta name="keywords"    content="Lattes, Thayuno">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"    href="./css/style.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+    <!-- <meta http-equiv="refresh"  content="5; URL='https://lattes.cnpq.br/9442929969782053'"> -->
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+        <a href="#" title="Thayuno" class="rampart">タユノ</a>
+      <nav>
+        <ul>
+          <li><a href="https://linkedin.com/in/thayuno" target="_blank"><img src="./img/linkedin.png" alt="LinkedIn"  title="LinkedIn"> </a></li>
+          <li><a href="https://discord.gg/qFSanZuqzF"   target="_blank"><img src="./img/discord.png"  alt="Discord"   title="Discord">  </a></li>
+          <li><a href="https://github.com/thayuno"      target="_blank"><img src="./img/github.png"   alt="GitHub"    title="GitHub">   </a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <span id="expired">Redirecionando para Lattes de Yuri Santos Silva em: <span id="count-down"></span> segundos.</span> <br><br>
+
+      <button onclick="location.href = 'https://lattes.cnpq.br/9442929969782053'">Ir agora mesmo.</button>
+    </main>
+  </body>
+
+  <script>
+    var now = new Date();
+    var maxTime = now.setSeconds(now.getSeconds() + 5);
+
+    document.getElementById("count-down").innerHTML = 5;
+
+    var x = setInterval(function() {
+      now = new Date();
+
+      var timer = maxTime - now;
+
+      document.getElementById("count-down").innerHTML = Math.round(timer/1000);
+
+      if (timer < 0)
+      {
+        clearInterval(x);
+        document.getElementById("expired").innerHTML = "Redirecionando...";
+      }
+    }, 1000);
+  </script>
+</html>
